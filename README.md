@@ -179,3 +179,109 @@ python C:\Users\Bahati\PROJECTS\FIRST\app.py
 ```
 
 Then visit `http://127.0.0.1:5000` in your browser. That is it!
+
+---
+
+## Step 7 — Putting the Project on GitHub
+
+GitHub is a website where developers store and share their code. Think of it like Google Drive but for code. Here is exactly what we did to get this project there.
+
+### 7a — Install Git
+
+Git is a tool that tracks changes to your code. We checked it was installed by running:
+
+```
+git --version
+```
+
+It showed: `git version 2.54.0` — git is ready.
+
+### 7b — Install the GitHub CLI
+
+The GitHub CLI (command line interface) lets us talk to GitHub from the terminal without using the website. We installed it by running:
+
+```
+winget install --id GitHub.cli -e --silent
+```
+
+### 7c — Log In to GitHub
+
+We connected the GitHub CLI to our GitHub account by running:
+
+```
+gh auth login
+```
+
+A browser window opened. We chose:
+- **GitHub.com**
+- **HTTPS**
+- **Login with a web browser**
+
+Then signed in and came back to the terminal.
+
+### 7d — Initialize Git in the Project Folder
+
+Git needs to be told which folder to track. We ran this inside the project folder:
+
+```
+git init
+```
+
+This created a hidden `.git` folder that Git uses to track everything.
+
+### 7e — Create a `.gitignore` File
+
+Some files should never be pushed to GitHub — like your database (it contains your personal data) and tool config folders. We created a file called `.gitignore` that tells Git to ignore these:
+
+```
+todos.db
+__pycache__/
+*.pyc
+.env
+.claude/
+graphify-out/
+```
+
+### 7f — Stage the Files
+
+Staging means telling Git "these are the files I want to save". We ran:
+
+```
+git add .gitignore README.md app.py static/style.css templates/index.html
+```
+
+### 7g — Commit the Files
+
+A commit is like taking a snapshot of your project at this moment in time. We ran:
+
+```
+git commit -m "Initial todo web app with Flask, SQLite, HTML and CSS"
+```
+
+### 7h — Create the GitHub Repo and Push
+
+This command created a new public repository on GitHub called `todo-app`, connected it to our local project, and uploaded everything:
+
+```
+gh repo create todo-app --public --source=. --remote=origin --push
+```
+
+### The project is now live at:
+
+```
+https://github.com/martinotim3/todo-app
+```
+
+---
+
+## How to Push Changes in the Future
+
+Every time you make a change to the app and want to save it to GitHub, run these three commands:
+
+```
+git add .
+git commit -m "Describe what you changed here"
+git push
+```
+
+That is it — your changes will appear on GitHub within seconds.
