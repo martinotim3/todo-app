@@ -1,0 +1,6 @@
+todos.db
+__pycache__/
+*.pyc
+.env
+.claude/
+graphify-out/
