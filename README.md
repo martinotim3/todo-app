@@ -105,7 +105,7 @@ This file makes the app look nice. Without it, the page would just be plain blac
 To start the app, open your terminal, and type:
 
 ```
-python C:\Users\Bahati\PROJECTS\FIRST\app.py
+python C:\Users\comp\PROJECTS\FIRST\app.py
 ```
 
 You will see something like this in the terminal:
@@ -175,7 +175,7 @@ That stops the server. Your todos are still saved in the `todos.db` file and wil
 Every time you want to use the app, just open your terminal and run:
 
 ```
-python C:\Users\Bahati\PROJECTS\FIRST\app.py
+python C:\Users\comp\PROJECTS\FIRST\app.py
 ```
 
 Then visit `http://127.0.0.1:5000` in your browser. That is it!
